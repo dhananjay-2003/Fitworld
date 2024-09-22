@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Fitworld</title> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css" integrity="sha512-EJp8vMVhYl7tBFE2rgNGb//drnr1+6XKMvTyamMS34YwOEFohhWkGq13tPWnK0FbjSS6D8YoA3n3bZmb3KiUYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% extends '1.html' %} 
+
+    {% block title %}
+            ||Contact US||
+          {% endblock title %}
+
+    {% block body %}
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: gray;
+        }
+
+        .back{
+            background-image: url(static/img/Contact_us.jpeg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 40vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: sticky;
+
+        }
+
+        
+
+        .cont{
+            background-color: rgba(0, 0, 0, 0.671);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        h1{
+            color: white;
+            font-size: 50px;
+            font-weight: 700;
+            
+        }
+
+        button{
+            background-color: rgb(45, 147, 211);
+            border: 2px solid black;
+            border-radius: 14px;
+        }
+
+        button a{
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+            font-weight: 600;
+            padding: 20px;
+        }
+
+        a:hover{
+            text-decoration: none;
+            font-size: 34px;
+            font-weight: 500;
+            color: black;
+
+        }
+        .gap{
+            height: 10vh;
+            width: 100%;
+            text-align: center;
+            font-size: 45px;
+            font-weight: 700;
+
+        }
+
+        .conta{
+            width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 20px;
+            background-color: cornsilk;
+        }
+
+        input{
+            margin-bottom: 10px;
+            width: 100%;
+            padding-left:10px ;
+            color: navy;
+        }
+
+        .inpu{
+            margin-bottom: 10px;
+            width: 100%;
+            padding-left:10px ;
+            color: navy;
+
+        }
+
+        .btnSign{
+            background-color: rgb(238, 54, 255);
+            font-size: 25px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .icon{
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+
+        @media (max-width: 890px) and (min-width: 710px){
+            h1{
+                font-size: 40px;
+            }
+
+            .gap{
+                font-size: 30px;
+                margin-bottom: 0px;
+            }
+
+            button a{
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 710px) and (min-width: 550px){
+            h1{
+                font-size: 30px;
+            }
+
+            .gap{
+                font-size: 24px;
+                margin-bottom: 0px;
+            }
+
+            button a{
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 550px){
+            .conta{
+            width: 300px;
+            height: 100%;
+            
+        }
+            h1{
+                font-size: 24px;
+            }
+
+            .gap{
+                font-size: 28px;
+                margin-bottom: 0px;
+            }
+
+            button a{
+                font-size: 18px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+
+    <div class="back">
+
+        <div class="cont">
+            <h1>Click the button to make a direct call</h1>
+            <button><a href="tel:+919653433942">Call Us</a></button>
+        </div>
+    </div>
+
+    <div class="grad"></div>
+
+    <div class="gap">
+        Let Us know about your Issue
+    </div>
+
+
+
+    <div class="conta">
+        
+
+        <form action="/contact" method="post">
+            {% csrf_token %}
+    
+            <!-- <label for="firstname">First Name:</label> -->
+            <input class="inpu" type="text" name="firstname" pattern="[A-Za-z]+" title="Only letters are allowed" placeholder="First Name" required><br>
+    
+            <!-- <label for="lastname">Last Name:</label> -->
+            <input class="inpu" type="text" name="lastname" pattern="[A-Za-z]+" title="Only letters are allowed" placeholder="last Name" required><br>
+    
+            <!-- <label for="email">Email Address:</label> -->
+            <input class="inpu" type="email" name="email" placeholder="Email Address" required><br>
+    
+            <!-- <label for="problem">Problem:</label> -->
+            <textarea class="inpu" type="text" name="problem" rows="4" cols="50" placeholder="Problem" required></textarea><br>
+    
+            <input class="btnSign" type="submit" value="Submit">
+
+            <div class="icon">
+                <a href=""><img src="../static/icons/whatsapp.png" alt="" srcset="" width="50px" height="50px"></a>
+                <a href=""><img src="../static/icons/instagram.png" alt="" srcset="" width="50px" height="47px"></a>
+                <a href=""><img src="../static/icons/youtube.png" alt="" srcset="" width="50px" height="45px"></a>
+                <a href=""><img src="../static/icons/twitter.png" alt="" srcset="" width="50px" height="45px"></a>
+            </div>
+
+        </form>
+    </div>
+
+    </div>
+    
+        
+
+<script>
+  
+    document.addEventListener("DOMContentLoaded", function () {
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            var firstnameInput = document.querySelector('[name="firstname"]');
+            var lastnameInput = document.querySelector('[name="lastname"]');
+            var emailInput = document.querySelector('[name="email"]');
+            var problemInput = document.querySelector('[name="problem"]');
+            
+            // Regular expression for allowing only letters in firstname and lastname
+            var lettersOnlyRegex = /^[A-Za-z]+$/;
+
+            // Regular expression for basic email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!firstnameInput.value.match(lettersOnlyRegex)) {
+                alert('Please enter a valid first name with only letters.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!lastnameInput.value.match(lettersOnlyRegex)) {
+                alert('Please enter a valid last name with only letters.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!emailInput.value.match(emailRegex)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return;
+            }
+
+            // Additional validation for the "problem" field if needed
+
+        });
+    });
+
+
+</script>
+    
+    
+
+
+    {% endblock body %}
+</body>
+
+
+
+
+
+
+</html>
+

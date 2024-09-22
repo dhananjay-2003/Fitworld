@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>
+      {% block title %} <h2>Not registered yet</h2> {% endblock title %}
+      Fitworld
+    </title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Custom styles for a black navbar */
+      .navbar {
+        background-color: #000; /* black background */
+      }
+
+      .navbar-dark .navbar-brand,
+      .navbar-dark .navbar-nav .nav-link {
+        color: #fff; /* white text */
+      }
+
+      .navbar-brand {
+        font-size: 50px;
+        font-weight: 600;
+      }
+
+      .nav-item {
+        font-size: 23px;
+        /* padding: 0px 10px 0px ; */
+      }
+      .nav-item:hover {
+        font-size: 25px;
+      }
+
+      .nav-link:hover {
+        color: red;
+        font-size: 25px;
+      }
+
+      .logout {
+        background-color: red;
+        color: white;
+        border: 3px solid rgb(191, 126, 126);
+        border-radius: 4px;
+        margin: 0px 20px 0px;
+        width: 120px;
+        height: 50px;
+        font-size: 23px;
+        font-weight: 400;
+      }
+
+      #log1 {
+        text-decoration: none;
+        color: white;
+      }
+
+      .logout:hover {
+        font-size: 27px;
+        background-color: rgb(228, 56, 56);
+      }
+
+      .line {
+        height: 5px;
+        background-color: rgb(102, 96, 96);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <img
+        src="../static/img/nav.png"
+        alt=""
+        srcset=""
+        width="70px"
+        height="70px"
+      />
+      <a
+        class="navbar-brand"
+        href="#"
+        style="font-size: 40px; font-weight: 600; cursor: default"
+        >Fitworld</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto" style="font-size: 23px">
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="/home"
+              style="
+                font-size: 26px;
+                font-weight: 400;
+                padding-left: 25px;
+                padding-right: 25px;
+              "
+              >Home</a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="/about"
+              style="
+                font-size: 26px;
+                font-weight: 400;
+                padding-left: 25px;
+                padding-right: 25px;
+              "
+              >About</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="/services"
+              style="
+                font-size: 26px;
+                font-weight: 400;
+                padding-left: 25px;
+                padding-right: 25px;
+              "
+              >Services</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="/contact"
+              style="
+                font-size: 26px;
+                font-weight: 400;
+                padding-left: 25px;
+                padding-right: 25px;
+              "
+              >Contact us</a
+            >
+          </li>
+
+          <!-- <button class="logout"><a id="log1" href="/logout">logout</a></button> -->
+
+          <a id="log1" href="/logout"><button class="logout">logout</button></a>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- <div class="line"></div> -->
+
+    <!-- Message for showing the contact page description -->
+
+    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-Y3WD6FqEauvJnXPhzB/Ko0G9F4JVOq5tGOjKthMO/GGiM2FhJ8meYU8Cok2O3+1y"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    {% block body %} {% endblock body %}
+  </body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% extends '1.html' %} {% block title %} ||Contact US|| {% endblock title %}
+    {% block body %}
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .protein {
+        box-sizing: border-box;
+        background: rgb(84, 168, 68);
+        background: linear-gradient(
+          138deg,
+          rgba(84, 168, 68, 1) 0%,
+          rgba(217, 212, 45, 0.8380602240896359) 50%,
+          rgba(241, 0, 0, 0.8128501400560224) 100%
+        );
+      }
+      h1,
+      h3 {
+        text-align: center;
+      }
+
+      body {
+        background-color: rgb(11, 176, 177);
+      }
+
+      .cono {
+        background: rgb(11, 176, 177);
+        background: radial-gradient(
+          circle,
+          rgba(11, 176, 177, 1) 0%,
+          rgba(169, 45, 217, 0.9332983193277311) 52%,
+          rgba(73, 247, 236, 0.8128501400560224) 100%
+        );
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 10px;
+        margin-left: 0px;
+      }
+
+      .card {
+        width: 325px;
+        height: 400px;
+        background-color: rgb(211, 229, 226);
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border: 2px solid black;
+      }
+
+      .card:hover {
+        width: 325px;
+        /* height: 420px; */
+        background-color: rgb(231, 124, 204);
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 10px;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid black;
+      }
+
+      .card img:hover {
+        transform: scale(1.3);
+      }
+
+      .card-content h1 {
+        font-size: 39px;
+        margin-bottom: 10px;
+      }
+
+      .card-content p {
+        font-size: 24px;
+        color: black;
+        margin-bottom: 2px;
+      }
+
+      .line {
+        height: 10px;
+        background-color: black;
+      }
+
+      .carbohydrates {
+        background: rgb(171, 57, 155);
+        background: linear-gradient(
+          138deg,
+          rgba(171, 57, 155, 1) 0%,
+          rgba(73, 45, 217, 0.406687675070028) 50%,
+          rgba(67, 160, 171, 0.8128501400560224) 100%
+        );
+      }
+
+      .Fiber {
+        background: rgb(23, 177, 11);
+        background: linear-gradient(
+          167deg,
+          rgba(23, 177, 11, 1) 0%,
+          rgba(213, 217, 45, 0.9332983193277311) 47%,
+          rgba(247, 73, 220, 0.8128501400560224) 100%
+        );
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: white;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgb(198, 100, 209);
+        background: linear-gradient(
+          167deg,
+          rgba(198, 100, 209, 1) 0%,
+          rgba(217, 45, 45, 1) 57%,
+          rgba(247, 239, 73, 0.8128501400560224) 100%
+        );
+        border-radius: 20px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(5, 230, 207);
+        box-shadow: 0 0 10px 10px rgb(0, 183, 255);
+      }
+      @media (max-width: 1400px) and (min-width: 1200px) {
+        .conn > h3 {
+          font-size: 23px;
+        }
+
+        .conn > h1 {
+          font-size: 31px;
+        }
+
+        .protein > h1 {
+          font-size: 28px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 28px;
+        }
+
+        .fiber > h1 {
+          font-size: 28px;
+        }
+        .card {
+          width: 260px;
+          height: 50%;
+        }
+
+        .card:hover {
+          width: 260px;
+          height: 50%;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 1200px) and (min-width: 1000px) {
+        .conn > h3 {
+          font-size: 23px;
+        }
+
+        .conn > h1 {
+          font-size: 32px;
+        }
+
+        .protein > h1 {
+          font-size: 28px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 28px;
+        }
+
+        .fiber > h1 {
+          font-size: 28px;
+        }
+        .card {
+          width: 220px;
+          height: 50%;
+        }
+
+        .card:hover {
+          width: 220px;
+          height: 50%;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 1000px) and (min-width: 880px) {
+        .conn > h3 {
+          font-size: 25px;
+        }
+
+        .conn > h1 {
+          font-size: 33px;
+        }
+
+        .protein > h1 {
+          font-size: 30px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 30px;
+        }
+
+        .fiber > h1 {
+          font-size: 30px;
+        }
+        .card {
+          width: 200px;
+          height: 50%;
+        }
+
+        .card:hover {
+          width: 200px;
+          height: 50%;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 880px) {
+        .conn > h3 {
+          font-size: 20px;
+        }
+
+        .conn > h1 {
+          font-size: 28px;
+        }
+
+        .protein > h1 {
+          font-size: 25px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 25px;
+        }
+
+        .fiber > h1 {
+          font-size: 25px;
+        }
+
+        .card {
+          width: 180px;
+          height: 50%;
+        }
+
+        .card:hover {
+          width: 180px;
+          height: 50%;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cono">
+      <h3>You fall Under :</h3>
+      <h1>Obesity-2 Weight</h1>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="protein">
+      <h1>Full Body</h1>
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="../static/img/obesity2_w/Plank Straight Arm Kickback _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/obesity2_w/Touch And Hop _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/obesity2_w/Triangle Crunch _ Illustrated Exercise Guide (1).gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Windshield Wipers _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Triangle Crunch _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Inchworm _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Jump Rope _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Plank Leg Extension Pulses _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="carbohydrates">
+      <h1>Upper Body</h1>
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="../static/img/obesity2_w/Standing Cross Chest Curl _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/obesity2_w/Tricep Dips _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Dumbbell Pullover _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Dumbbell Side Swings _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Dumbbell Skier Swing _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Dumbbell Thrusters _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Lying Tricep Extension _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Side Plank Hip Lifts _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="Fiber">
+      <h1>Lower Body</h1>
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Wall Sit Plie Calf Raise _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Sumo Squat _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Lawnmower Pull _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Dead Bug _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Bent Leg Jackknife _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/overcommon_w/Alternate Heel Touchers _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Dumbbell Swing _ Illustrated Exercise Guide (1).gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="../static/img/common_w/Squat With Overhead Tricep Extension _ Illustrated Exercise Guide.gif"
+            alt=""
+            srcset=""
+          />
+          <div class="card-content">
+            <p>Reps :</p>
+            <p>Sets :</p>
+            <p>Interval :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}
+  </body>
+</html>

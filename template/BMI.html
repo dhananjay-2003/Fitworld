@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% extends '1.html' %} {% block title %} ||Contact US|| {% endblock title %}
+    {% block body %}
+    <style>
+      body {
+        background-image: url("../static/img/calculation.gif");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+
+      .container {
+        margin-top: 50px;
+        width: 30vw;
+        box-shadow: 1px 0px 21px 12px #b9a0ba;
+        padding: 50px;
+        border-radius: 30px;
+        text-align: center;
+        background-color: aliceblue;
+      }
+
+      h1 {
+        margin-bottom: 40px;
+      }
+
+      input {
+        border: none;
+        border-bottom: 1px solid #0044ff;
+        width: 50%;
+        margin-bottom: 20px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      button {
+        width: 100%;
+        height: 35px;
+        margin-top: 25px;
+        border-radius: 20px;
+        border: none;
+        background-color: #0044ff;
+        color: #fff;
+        font-size: 22px;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 25px;
+      }
+      @media (max-width: 1300px) and (min-width: 1000px) {
+        .container {
+          width: 450px;
+          margin-top: 40px;
+        }
+      }
+
+      @media (max-width: 1000px) and (min-width: 880px) {
+        .container {
+          margin-top: 20px;
+          width: 400px;
+        }
+
+        h1 {
+          font-size: 35px;
+        }
+
+        input {
+          background-color: rgba(128, 128, 128, 0.286);
+        }
+      }
+
+      @media (max-width: 880px) {
+        .container {
+          width: 350px;
+          height: 450px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 17px;
+        }
+
+        input {
+          background-color: rgba(128, 128, 128, 0.286);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+
+      <p>Height (cm)</p>
+      <input type="number" id="height" />
+
+      <p>Weight (kg)</p>
+      <input type="number" id="weight" />
+
+      <button id="btn">Calculate</button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      window.onload = () => {
+        const button = document.querySelector("#btn");
+        button.addEventListener("click", calculateBmi);
+      };
+
+      function calculateBmi() {
+        const height = document.querySelector("#height").value;
+        const weight = document.querySelector("#weight").value;
+        const result = document.querySelector("#result");
+
+        if (!height || isNaN(height) || height < 0) {
+          result.innerText = "Please provide a valid height";
+          return;
+        } else if (!weight || isNaN(weight) || weight < 0) {
+          result.innerText = "Please provide a valid weight";
+          return;
+        }
+
+        const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+
+        if (bmi < 18.5) {
+          result.innerText = `Under Weight: ${bmi}`;
+          window.location.href = "/underweight/";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+          result.innerText = `Normal: ${bmi}`;
+          window.location.href = "/normalweight/";
+        } else if (bmi >= 25 && bmi < 29.9) {
+          result.innerText = `Over Weight: ${bmi}`;
+          window.location.href = "/overweight/";
+        } else if (bmi >= 30 && bmi < 34.9) {
+          result.innerText = `Obesity (Class I): ${bmi}`;
+          window.location.href = "/obesity1/";
+        } else if (bmi >= 35.5 && bmi < 39.9) {
+          result.innerText = `Obesity (Class II) : ${bmi}`;
+          window.location.href = "/obesity2/";
+        } else {
+          result.innerText = `Extreme Obesity: ${bmi}`;
+          window.location.href = "/extreme/";
+        }
+      }
+    </script>
+
+    {% endblock body %}
+  </body>
+</html>

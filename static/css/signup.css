@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.signContainer {
+  background-image: url(../img/signu.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signbox {
+  background-color: rgba(60, 60, 210, 0.11);
+  margin-left: 400px;
+  margin-top: 40px;
+  height: 69vh;
+  width: 30vw;
+  border: 2px solid black;
+  border-radius: 70px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 27px 32px 37px black;
+}
+
+h2 {
+  font-size: 55px;
+  font-weight: bolder;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  /* stroke: black;
+            stroke-width: 200; */
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+  font-family: "Fasthand", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
+.signbox label {
+  font-size: 28px;
+  font-weight: bold;
+  /* margin-bottom: 100px; */
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1.3px;
+  font-family: "Fasthand", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
+.inp {
+  margin-bottom: 20px;
+  width: 36%;
+  height: 3.4vh;
+  border: 2px solid #2b09ed;
+}
+
+.inp3 {
+  width: 100px;
+}
+
+p {
+  font-size: 20px;
+  color: red;
+}
+
+.btnSign {
+  background-color: red;
+  color: white;
+  font-size: 27px;
+  width: 10vw;
+  height: 5vh;
+  margin-left: 120px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.btnSign:hover {
+  background-color: rgb(180, 57, 57);
+  font-size: 29px;
+}
+
+span {
+  font-size: 24px;
+  color: red;
+}
+h3 {
+  background-color: #ffffff69;
+}
+
+@media (max-width: 1400px) and (min-width: 1100px) {
+  .signbox {
+    width: 450px;
+    height: 400px;
+  }
+  .signbox > h2 {
+    margin: 10px;
+    font-size: 40px;
+  }
+
+  label {
+    font-size: 20px;
+    color: red;
+  }
+
+  .inp3 {
+    width: 100px;
+  }
+
+  h3 {
+    background-color: antiquewhite;
+  }
+}
+@media (max-width: 1300px) and(min-width:1100px) {
+  .signbox {
+    width: 600px;
+  }
+
+  .signbox > h2 {
+    margin: 10px;
+    font-size: 40px;
+  }
+
+  label {
+    font-size: 20px;
+    color: red;
+  }
+
+  .inp3 {
+    width: 100px;
+  }
+
+  h3 {
+    background-color: antiquewhite;
+  }
+}
+@media (max-width: 1100px) and (min-width: 900px) {
+  .signContainer {
+    width: 100%;
+  }
+
+  .signbox {
+    width: 400px;
+    height: 400px;
+  }
+
+  .signbox > h2 {
+    margin: 10px;
+    font-size: 40px;
+  }
+
+  label {
+    font-size: 20px;
+    color: red;
+  }
+
+  .inp3 {
+    width: 100px;
+  }
+
+  h3 {
+    background-color: antiquewhite;
+  }
+}
+
+@media (max-width: 900px) {
+  .signContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-items: center;
+  }
+
+  .signbox {
+    width: 400px;
+    margin: 0px;
+  }
+  .signbox > h2 {
+    font-size: 40px;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+  .inp3 {
+    width: 100px;
+  }
+
+  .btnSign {
+    width: 150px;
+  }
+
+  h3 {
+    background-color: #ffffff69;
+  }
+}

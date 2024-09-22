@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% extends '1.html' %} {% block title %} 
+    ||Book Appointment|| 
+    {% endblock title %} {% block body %}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("../static/img/appoint1.avif");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .container {
+        justify-content: center;
+        margin: 0px auto;
+      }
+
+      .border {
+        border: 1px solid #dee2e6; /* Add a border to the form */
+        border-radius: 10px; /* Add rounded corners to the form */
+      }
+
+      .shadow {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+      }
+
+      .bg-light {
+        background-color: #ffffff; /* Set a light background color for the form */
+      }
+
+      .form-control {
+        margin-bottom: 15px;
+      }
+
+      /* Style the heading */
+      h3 {
+        font-weight: normal;
+        color: #000000; /* Set a text color for the heading */
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      /* Style the form inputs */
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="date"],
+      input[type="time"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da; /* Set a border color for the input fields */
+        border-radius: 5px; /* Add rounded corners to the input fields */
+        box-sizing: border-box;
+      }
+
+      /* Style the form select */
+      select {
+        appearance: none; /* Remove default arrow in Firefox */
+        -webkit-appearance: none; /* Remove default arrow in Chrome/Safari/Edge */
+        padding-right: 25px; /* Add some space for the custom arrow */
+      }
+
+      /* Style the form buttons */
+      .btn-primary {
+        background-color: #7ccfee; /* Set a primary button color */
+        color: #000000; /* Set text color for the button */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn-outline-secondary {
+        border: 1px solid #6c757d; /* Set a border color for the secondary button */
+        color: #6c757d; /* Set text color for the secondary button */
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Add some spacing for the buttons */
+      .float-end {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+          <div class="col-12">
+            <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">
+              Appointment form
+            </h3>
+          </div>
+          <form id="appointmentformbook" method="POST" action="/book/">
+            {% csrf_token %}
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input
+                  required
+                  id="fname"
+                  name="fname"
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  required
+                  id="lname"
+                  name="lname"
+                  type="text"
+                  class="form-control"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  required
+                  id="mobile"
+                  name="mobile"
+                  type="tel"
+                  class="form-control"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  required
+                  id="email"
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  required
+                  id="date"
+                  name="date"
+                  type="date"
+                  class="form-control"
+                  placeholder="Enter Date"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  required
+                  id="time"
+                  name="time"
+                  type="time"
+                  class="form-control"
+                  placeholder="Enter Course"
+                />
+              </div>
+              <div class="col-12">
+                <select class="form-select" id="course">
+                  <option selected>Purpose Of Appointment</option>
+                  <option value="1">Kick Boxing</option>
+                  <option value="2">Wushu</option>
+                  <option value="3">MMA</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="col-12 mt-5">
+                <button type="submit" class="btn btn-primary float-end">
+                  Book Appointment
+                </button>
+                <button
+                  type="button"
+                  id="cancelButton"
+                  class="btn btn-outline-secondary float-end me-2"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Add event listener to the Cancel button
+      document
+        .getElementById("cancelButton")
+        .addEventListener("click", function () {
+          // Reset the form to clear entered data
+          document.getElementById("appointmentformbook").reset();
+        });
+    </script>
+
+    <script src="../static/js/Pappointment.js"></script>
+
+    {% endblock body %}
+  </body>
+</html>

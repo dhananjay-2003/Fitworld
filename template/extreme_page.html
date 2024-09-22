@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% extends '1.html' %} {% block title %} ||Contact US|| {% endblock title %}
+    {% block body %}
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .protein {
+        box-sizing: border-box;
+        background-image: url("../static/img/normal_weight/protein/lentils.jpg");
+      }
+      h1,
+      h3 {
+        text-align: center;
+      }
+
+      body {
+        background: rgb(148, 7, 145);
+        background: linear-gradient(
+          90deg,
+          rgba(148, 7, 145, 1) 22%,
+          rgba(198, 54, 77, 1) 55%,
+          rgba(255, 106, 0, 1) 100%
+        );
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 10px;
+        margin-left: 0px;
+        padding: 20px;
+      }
+
+      .card {
+        width: 325px;
+        height: 400px;
+        background-color: cornsilk;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        width: 325px;
+        height: 400px;
+        background-color: rgb(201, 192, 154);
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 10px;
+      }
+
+      .card > img {
+        width: 100%;
+        height: 50%;
+        /* height: auto; */
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .card img :hover {
+        transform: scale(1.3);
+      }
+
+      .card-content {
+        height: 40%;
+        width: 100%;
+      }
+
+      .card-content h1 {
+        font-size: 35px;
+      }
+
+      .card-content p {
+        font-size: 20px;
+        color: black;
+        margin-bottom: 2px;
+      }
+
+      .carbohydrates {
+        background-color: aquamarine;
+      }
+
+      .Fiber {
+        background-color: rgb(56, 128, 191);
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: white;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgb(198, 100, 209);
+        background: linear-gradient(
+          167deg,
+          rgba(198, 100, 209, 1) 0%,
+          rgba(217, 45, 45, 1) 57%,
+          rgba(247, 239, 73, 0.8128501400560224) 100%
+        );
+        border-radius: 20px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(5, 230, 207);
+        box-shadow: 0 0 10px 10px rgb(0, 183, 255);
+      }
+
+      .line {
+        height: 5px;
+        background-color: gray;
+      }
+      @media (max-width: 1400px) and (min-width: 1200px) {
+        h3 {
+          font-size: 23px;
+        }
+
+        h1 {
+          font-size: 31px;
+        }
+
+        .protein > h1 {
+          font-size: 28px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 28px;
+        }
+
+        .fiber > h1 {
+          font-size: 28px;
+        }
+        .card {
+          width: 260px;
+          height: 300px;
+        }
+
+        .card:hover {
+          width: 260px;
+          height: 300px;
+        }
+
+        .card > img {
+          width: 100%;
+          height: 50%;
+          /* height: auto; */
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > h1 {
+          font-size: 22px;
+        }
+
+        .card-content > p {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 1200px) and (min-width: 1000px) {
+        h3 {
+          font-size: 23px;
+        }
+
+        h1 {
+          font-size: 35px;
+        }
+
+        .protein > h1 {
+          font-size: 28px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 28px;
+        }
+
+        .fiber > h1 {
+          font-size: 28px;
+        }
+        .card {
+          width: 220px;
+          height: 280px;
+        }
+
+        .card:hover {
+          width: 220px;
+          height: 280px;
+        }
+
+        .card > img {
+          width: 100%;
+          height: 50%;
+          /* height: auto; */
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > h1 {
+          font-size: 25px;
+        }
+
+        .card-content > p {
+          font-size: 17px;
+        }
+      }
+
+      @media (max-width: 1000px) and (min-width: 880px) {
+        h3 {
+          font-size: 25px;
+        }
+
+        h1 {
+          font-size: 33px;
+        }
+
+        .protein > h1 {
+          font-size: 30px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 30px;
+        }
+
+        .fiber > h1 {
+          font-size: 30px;
+        }
+        .card {
+          width: 200px;
+          height: 280px;
+        }
+
+        .card:hover {
+          width: 200px;
+          height: 280px;
+        }
+
+        .card > img {
+          width: 100%;
+          height: 50%;
+          /* height: auto; */
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .card-content > h1 {
+          font-size: 25px;
+        }
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 880px) {
+        h3 {
+          font-size: 20px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        .protein > h1 {
+          font-size: 25px;
+        }
+
+        .carbohydrates > h1 {
+          font-size: 25px;
+        }
+
+        .fiber > h1 {
+          font-size: 25px;
+        }
+
+        .card {
+          width: 180px;
+          height: 230px;
+        }
+
+        .card:hover {
+          width: 180px;
+          height: 230px;
+        }
+        .card > img {
+          width: 100%;
+          height: 50%;
+          /* height: auto; */
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .card-content > h1 {
+          font-size: 23px;
+        }
+
+        .card-content {
+          height: 45%;
+        }
+
+        .card-content > p {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h3>You fall Under :</h3>
+    <h1>Extreme obesity</h1>
+
+    <div class="line"></div>
+
+    <div class="protein">
+      <h1>Protein</h1>
+      <div class="card-container">
+        <div class="card">
+          <img src="../static/img/Login_background.jpg" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title one</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Two</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="carbohydrates">
+      <h1>carbohydrates</h1>
+      <div class="card-container">
+        <div class="card">
+          <img src="../static/img/Login_background.jpg" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title one</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Two</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="Fiber">
+      <h1>Fiber</h1>
+      <div class="card-container">
+        <div class="card">
+          <img src="../static/img/Login_background.jpg" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title one</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Two</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../" alt="" srcset="" />
+          <div class="card-content">
+            <h1>Title Three</h1>
+            <p>Quantity :</p>
+            <p>Time :</p>
+            <p>Calorie :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}
+  </body>
+</html>

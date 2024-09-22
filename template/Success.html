@@ -1,0 +1,64 @@
+
+{% extends '1.html' %} 
+
+{% block title %}
+        ||Successfull||
+      {% endblock title %}
+
+{% block body %}
+
+<style>
+  body {
+    background-image: url('../static/img/success.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .content{
+    height: 450px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 100px auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 1px 0px 21px 12px #b9a0ba;
+
+  }
+
+
+  p{
+    font-size: 25px;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+
+  }
+          
+</style>
+</head>
+<body>
+
+  <div class="content">
+
+    <img src="static/img/tick.gif" width="250px" height="200px">
+
+    <p>Your Appointment has been requested Successfully.</p>
+    <p>Please, Check Your E-mail for Appointment Confirmation.</p>
+
+  </div>
+
+
+  
+  
+
+ 
+
+{% endblock body %}
+</body>
+</html>

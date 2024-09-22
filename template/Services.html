@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>WhatsApp QR Code</title> -->
+    {% extends '1.html' %} {% block title %} ||Services|| {% endblock title %}
+    {% block body %}
+
+    <style>
+      .con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .line {
+        background-color: aqua;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          .con {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            background-color: black;
+            height: 100%;
+          }
+          .container {
+            width: 280px;
+            height: 80vh;
+            background-color: rgb(213, 207, 219);
+            border: 2px solid black;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+          }
+
+          .im {
+            width: 250px;
+            height: 50%;
+            margin-top: 50px;
+            margin-bottom: -55px;
+          }
+
+          .im img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 40px;
+            border: 1px solid black;
+            margin-bottom: 3px;
+          }
+
+          .im img:hover {
+            transform: scaleY(1.1);
+          }
+
+          h1 {
+            font-weight: 700;
+            color: black;
+          }
+
+          h3 {
+            font-size: 20px;
+          }
+
+          .container:nth-child(odd) {
+            margin-top: 0px;
+          }
+
+          .container:nth-child(even) {
+            margin-top: 100px;
+          }
+
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background-color: rgb(102, 96, 96);
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: red;
+          }
+
+          ::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(5, 230, 207);
+            box-shadow: 0 0 10px 10px rgb(0, 183, 255);
+          }
+
+          @media (max-width: 1415px) and (min-width: 1170px) {
+            .con {
+              height: 100vh;
+            }
+            .container {
+              width: 230px;
+              height: 70vh;
+              background-color: rgb(213, 207, 219);
+              border: 1px solid black;
+              border-radius: 30px;
+              padding: 10px;
+            }
+
+            .im {
+              width: 210px;
+              height: 50%;
+            }
+
+            .container > h1 {
+              font-size: 22px;
+            }
+
+            .container > h3 {
+              font-size: 18px;
+            }
+          }
+
+          @media (max-width: 1170px) and (min-width: 1050px) {
+            .con {
+              height: 100vh;
+            }
+            .container {
+              width: 200px;
+              height: 60vh;
+              background-color: rgb(213, 207, 219);
+              border: 1px solid black;
+              border-radius: 30px;
+              padding: 10px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            .im {
+              width: 180px;
+              height: 50%;
+            }
+
+            .container > h1 {
+              font-size: 22px;
+            }
+
+            .container > h3 {
+              font-size: 18px;
+            }
+          }
+
+          @media (max-width: 1050px) and (min-width: 800px) {
+            .con {
+              height: 100vh;
+            }
+            .container {
+              width: 150px;
+              height: 60vh;
+              background-color: rgb(213, 207, 219);
+              border: 1px solid black;
+              border-radius: 30px;
+              padding: 10px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            .im {
+              width: 140px;
+              height: 50%;
+            }
+
+            .container > h1 {
+              font-size: 18px;
+            }
+
+            .container > h3 {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 800px) {
+            .con {
+              height: 100%;
+            }
+            .container {
+              width: 98vw;
+              height: 170px;
+              background-color: rgb(213, 207, 219);
+              border: 1px solid black;
+              border-radius: 30px;
+              padding: 10px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-direction: column;
+              margin: 20px;
+            }
+
+            .im {
+              width: 140px;
+              height: 100px;
+              margin: 0px;
+              border-radius: 0px;
+            }
+
+            .im > img {
+              border-radius: 0px;
+            }
+
+            .container > h1 {
+              font-size: 18px;
+              margin: 0px;
+            }
+
+            .container > h3 {
+              font-size: 14px;
+            }
+
+            .container:nth-child(odd) {
+              margin-top: 0px;
+            }
+
+            .container:nth-child(even) {
+              margin-top: 0px;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="con">
+          <div class="container">
+            <div class="im">
+              <img src="../static/img/certificate.png" alt="" srcset="" />
+            </div>
+            <h1>Certified Certification</h1>
+            <h3>
+              We will provide the certification which will be accepted by the
+              government.
+            </h3>
+          </div>
+          <div class="container">
+            <div class="im">
+              <img src="../static/img/trainer.jpeg" alt="" srcset="" />
+            </div>
+            <h1>Well Trained Trainer</h1>
+            <h3>
+              We have the who have the experience in teaching, guiding and
+              umpiring
+            </h3>
+          </div>
+          <div class="container">
+            <div class="im">
+              <img src="../static/img/ampple.jpeg" alt="" srcset="" />
+            </div>
+            <h1>Ample Of Facilities</h1>
+            <h3>
+              We have the ample of facilities in the institute which should be
+              beneficial to all.
+            </h3>
+          </div>
+          <div class="container">
+            <div class="im">
+              <img src="../static/img/guider.jpeg" alt="" srcset="" />
+            </div>
+            <h1>Best Guider</h1>
+            <h3>We have experienced of guiding the persons.</h3>
+          </div>
+          <div class="container">
+            <div class="im">
+              <img src="../static/img/participate.jpeg" alt="" srcset="" />
+            </div>
+            <h1>Participate</h1>
+            <h3>
+              We will take you to the competative competition in the respective
+              field,If we have interested.
+            </h3>
+          </div>
+        </div>
+
+        {% endblock body %}
+      </body>
+    </html>
+  </body>
+</html>
